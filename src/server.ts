@@ -1,5 +1,6 @@
 import * as http from "http";
 import {getFilterEpisode, getListEpisodes} from "./controllers/podcasts-controller";
+import { Routes } from "./routes/routes";
 
 const porta = process.env.PORT;
 
@@ -14,12 +15,12 @@ const server = http.createServer(
         console.log("Debug - "+ queryString);
 
         // lista podcasts
-        if (request.method === "GET" && baseUrl === "/api/list"){
+        if (request.method === "GET" && baseUrl === Routes.LIST){
             await getListEpisodes(request, response);
         }
 
         // filtrar podcasts
-        if (request.method === "GET" && baseUrl ==="/api/episode") {
+        if (request.method === "GET" && baseUrl === Routes.EPISODE) {
             await getFilterEpisode(request,response);
         }
 })
