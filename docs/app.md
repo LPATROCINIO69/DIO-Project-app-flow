@@ -41,3 +41,6 @@ RESPONSE:
     }]
 ```
 
+GET: retorna lista de episódios filtrado por um parâmetro enviado pelo cliente.
+
+
